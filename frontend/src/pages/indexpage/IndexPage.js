@@ -1,5 +1,5 @@
 import React from 'react';
-import {useEffect, useRef, useState} from "react";
+import { useRef, useState} from "react";
 import axios from "axios";
 
 function IndexPage()
@@ -17,7 +17,7 @@ function IndexPage()
       // let hour = (dateTime.getHours());
       // let ampm = hour >= 12 ? 'pm' : 'am';
       // let minutes = dateTime.getMinutes();
-      let weekday = dateTime.toLocaleString('default', { weekday: 'long' });
+      // let weekday = dateTime.toLocaleString('default', { weekday: 'long' });
       let month = dateTime.toLocaleString('default', { month: 'short' });
       let date = dateTime.getDate();
       let year= dateTime.getFullYear();
@@ -27,9 +27,9 @@ function IndexPage()
   function currentDay(timezoneIn, dtIn) {
       let dateTime = new Date(dtIn * 1000 + (timezoneIn * 1000));
       let weekday = dateTime.toLocaleString('default', { weekday: 'long' });
-      let month = dateTime.toLocaleString('default', { month: 'short' });
-      let date = dateTime.getDate();
-      let year= dateTime.getFullYear();
+      // let month = dateTime.toLocaleString('default', { month: 'short' });
+      // let date = dateTime.getDate();
+      // let year= dateTime.getFullYear();
       
       return `${weekday}`; 
   }
@@ -116,7 +116,7 @@ function IndexPage()
                   </svg>
                   <div className='text-3xl '> {data.name} , {data.sys.country}</div>
                 </div>
-                <img className='mx-auto mt-20 mb-5' src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} 
+                <img className='mx-auto mt-20 mb-5' src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png` } 
                     width={130}
                     height={130}/>
                 <div className='mx-auto mb-20 text-5xl font-bold w-fit'>{data.main.temp}° C</div>
